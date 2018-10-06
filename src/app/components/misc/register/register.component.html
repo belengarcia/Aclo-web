@@ -1,0 +1,43 @@
+
+<form (ngSubmit)="onSubmitRegister(form)" #form= 'ngForm'>
+  <div class="container">
+    <h1>Register</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+    <div>
+      <label for="name"><b>User Name</b></label>
+      <input type="text" placeholder="Enter your Name" name="name" [(ngModel)]="user.name" #mail="ngModel" required>
+    </div>
+    
+    <div>
+      <label for="mail"><b>Email</b></label>
+      <input type="text" [ngClass]="{ 'is-invalid': apiError || mail.errors && mail.touched }"
+      placeholder="Enter Email" name="mail" [(ngModel)]="user.mail" #mail="ngModel" required>
+      <div class="invalid-feedback" *ngIf="mail.errors && mail.touched && mail.errors.required">
+        Please chose an email.
+      </div>
+    </div>
+    
+    <div>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" [(ngModel)]="user.password" #password="ngModel" required>
+    </div>
+    
+    <button type="submit">Register</button>
+  </div>
+
+  <div class="container signin">
+    <p>Already have an account? <a href="#">Sign in</a>.</p>
+  </div>
+</form>
+
+<!-- <div class="input-group mb-3">
+  <input type="email" class="form-control" [ngClass]="{ 'is-invalid': apiError || email.errors && email.touched }"
+    placeholder="Email" name="email" [(ngModel)]="user.email" #email="ngModel" required email>
+  <div class="invalid-feedback" *ngIf="email.errors && email.touched && email.errors.required">
+    Please chose an email.
+  </div>
+  <div class="invalid-feedback" *ngIf="email.errors && email.touched && email.errors.email">
+    Please enter valid email.
+  </div>
+</div> -->
