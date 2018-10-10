@@ -8,7 +8,7 @@
 <div class="topnav" *ngIf="user">
     <div class='border-bottom'>
         <div routerLinkActive="active">
-            <a class="active" [routerLink]="['/home']">Aclo</a>
+            <a class="active" [routerLink]="['/users', user.id]">Aclo</a>
         </div>
         <div routerLinkActive="active">
             <a [routerLink]="['/users', user.id, 'myDestinies']">My Favourites</a>
@@ -18,7 +18,7 @@
         </div>
         <div class='left-menu'>
             <div routerLinkActive="active">
-                <a [routerLink]="['/users', user.id]">{{user.name}}</a>
+                <a [routerLink]="['/users', user.id, 'profile']">{{user.name}}</a>
             </div>
             <div routerLinkActive="active">
                 <button (click)="onClickLogout()">Logout</button>

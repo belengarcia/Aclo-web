@@ -12,8 +12,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'home', component: HomeComponent},
-  { path: 'users/:id', component: UserProfileComponent},
+  { path: 'users/:id', component: HomeComponent},
+  { path: 'users/:id/profile', component: UserProfileComponent},
   { path: 'users/:id/myDestinies', component: MyDestiniesComponent}
 ];
 
@@ -22,4 +22,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
 // [`/users/${user.id}/myDestinies`]
