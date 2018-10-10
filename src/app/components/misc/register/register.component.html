@@ -1,43 +1,42 @@
 
-<form (ngSubmit)="onSubmitRegister(form)" #form= 'ngForm'>
-  <div class="container">
-    <h1>Register</h1>
-    <p>Please fill in this form to create an account.</p>
-    <hr>
-    <div>
-      <label for="name"><b>User Name</b></label>
-      <input type="text" placeholder="Enter your Name" name="name" [(ngModel)]="user.name" #mail="ngModel" required>
-    </div>
-    
-    <div>
-      <label for="mail"><b>Email</b></label>
+<div class='aclo'>
+  <h1>ACLO</h1>
+</div>
+
+<div class='login-container'>
+  <form (ngSubmit)="onSubmitRegister(form)" #form= 'ngForm'>
+    <div class="login-container">
+      <input type="text" [ngClass]="{ 'is-invalid': apiError || name.errors && name.touched }"
+      placeholder="Enter your Name" name="name" [(ngModel)]="user.name" #name="ngModel" required>
+      <div class="invalid-feedback" *ngIf="name.errors && name.touched && name.errors.required">
+        <small>Please say your name.</small>
+      </div>
+        
       <input type="text" [ngClass]="{ 'is-invalid': apiError || mail.errors && mail.touched }"
       placeholder="Enter Email" name="mail" [(ngModel)]="user.mail" #mail="ngModel" required>
       <div class="invalid-feedback" *ngIf="mail.errors && mail.touched && mail.errors.required">
-        Please chose an email.
+        <small>Please chose an email.</small>
       </div>
+
+      <input type="password" [ngClass]="{ 'is-invalid': apiError || password.errors && password.touched }"
+      placeholder="Enter Password" name="password" [(ngModel)]="user.password" #password="ngModel" required>
+      <div class="invalid-feedback" *ngIf="password.errors && password.touched && mail.errors.required">
+        <small>Password is mandatory!</small>
+      </div>
+        
+      <div class="invalid-feedback" *ngIf="apiError">
+        {{ apiError.message }}
+      </div>
+
+      <button type="submit" [disabled]="!form.valid">Register</button>
     </div>
-    
-    <div>
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="password" [(ngModel)]="user.password" #password="ngModel" required>
-    </div>
-    
-    <button type="submit">Register</button>
+  </form>
   </div>
 
-  <div class="container signin">
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
+  <div class="signin">
+      <small>Already have an account? <a [routerLink]="['/login']">Login</a>.</small>
   </div>
-</form>
 
-<!-- <div class="input-group mb-3">
-  <input type="email" class="form-control" [ngClass]="{ 'is-invalid': apiError || email.errors && email.touched }"
-    placeholder="Email" name="email" [(ngModel)]="user.email" #email="ngModel" required email>
-  <div class="invalid-feedback" *ngIf="email.errors && email.touched && email.errors.required">
-    Please chose an email.
+  <div class='image'>
+      <img src='../../../../../img/girl.png' />
   </div>
-  <div class="invalid-feedback" *ngIf="email.errors && email.touched && email.errors.email">
-    Please enter valid email.
-  </div>
-</div> -->

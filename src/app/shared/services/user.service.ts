@@ -15,7 +15,7 @@ export class UserService extends BaseApiService {
 
   private users: Array<User> = [];
 
-  // private usersSubject: Subject<Array<User>> = new Subject();
+  private usersSubject: Subject<Array<User>> = new Subject();
 
   constructor(private http: HttpClient) {
     super();
@@ -23,6 +23,14 @@ export class UserService extends BaseApiService {
 
   create(user: User): Observable<User | ApiError> {
     return this.http.post<User>(UserService.USER_API, user, BaseApiService.defaultOptions)
+      .pipe(
+        map((user: User) => Object.assign(new User(), user)),
+        catchError(this.handleError)
+      );
+  }
+
+  get(id: String): Observable<User | ApiError> {
+    return this.http.get<User>(`${UserService.USER_API}/${id}`, BaseApiService.defaultOptions)
       .pipe(
         map((user: User) => Object.assign(new User(), user)),
         catchError(this.handleError)

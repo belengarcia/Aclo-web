@@ -1,0 +1,30 @@
+<!-- <div class="topnav"> -->
+  <!-- <a class="active" href="#home">Aclo</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+</div> -->
+
+<div class="topnav" *ngIf="user">
+    <div class='border-bottom'>
+        <div routerLinkActive="active">
+            <a class="active" [routerLink]="['/home']">Aclo</a>
+        </div>
+        <div routerLinkActive="active">
+            <a [routerLink]="['/users', user.id, 'myDestinies']">My Favourites</a>
+        </div>
+        <div routerLinkActive="active">
+            <a>My Stats</a>
+        </div>
+        <div class='left-menu'>
+            <div routerLinkActive="active">
+                <a [routerLink]="['/users', user.id]">{{user.name}}</a>
+            </div>
+            <div routerLinkActive="active">
+                <button (click)="onClickLogout()">Logout</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- (click)="onClickLogout()" -->

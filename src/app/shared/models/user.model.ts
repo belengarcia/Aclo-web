@@ -1,4 +1,5 @@
 export class User {
+    id: String;
     name: String;
     mail: String;
     password: String;
