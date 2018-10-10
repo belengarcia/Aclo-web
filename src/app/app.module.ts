@@ -1,3 +1,4 @@
+import { MyStatsComponent } from './components/my-stats/my-stats.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
@@ -24,7 +25,8 @@ import { FooterComponent } from './components/misc/footer/footer.component';
     HeaderComponent,
     MyDestiniesComponent,
     MyDestiniesListComponent,
-    FooterComponent
+    FooterComponent,
+    MyStatsComponent
   ],
   imports: [
     BrowserModule,
