@@ -3,7 +3,7 @@ import { BaseApiService } from './web-api.service';
 import {User} from '../models/user.model';
 import {HttpClient} from '@angular/common/http'
 import { Observable, Subject } from 'rxjs';
-import { catchError, map, tap} from 'rxjs/operators'
+import { catchError, map} from 'rxjs/operators'
 
 import { Injectable } from '@angular/core';
 
@@ -29,6 +29,18 @@ export class UserService extends BaseApiService {
       );
   }
 
+  list(): Observable<Array<User> | ApiError> {
+    return this.http.get<Array<User>>(UserService.USER_API, BaseApiService.defaultOptions)
+      .pipe(
+        map((users: Array<User>) => {
+          users = users.map(user => Object.assign(new User(), user));
+          this.users = users;
+          return users;
+        }),
+        catchError(this.handleError)
+      );
+  }
+
   get(id: String): Observable<User | ApiError> {
     return this.http.get<User>(`${UserService.USER_API}/${id}`, BaseApiService.defaultOptions)
       .pipe(
@@ -36,5 +48,6 @@ export class UserService extends BaseApiService {
         catchError(this.handleError)
       );
   }
+
 
 }
