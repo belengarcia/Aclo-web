@@ -1,3 +1,5 @@
+import { DestinyFinderComponent } from './components/destinies/destiny-details/destiny-finder.component';
+import { MyStatsComponent } from './components/my-stats/my-stats.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
@@ -10,9 +12,9 @@ import { RegisterComponent } from './components/misc/register/register.component
 import { HomeComponent } from './components/home/home.component';
 import { UserProfileComponent } from './components/user/user-profile/user-profile.component';
 import { HeaderComponent } from './components/misc/header/header.component';
-import { MyDestiniesComponent } from './components/my-destinies/my-destinies.component';
-import { MyDestiniesListComponent } from './components/my-destinies/my-destinies-list/my-destinies-list.component';
 import { FooterComponent } from './components/misc/footer/footer.component';
+import { MyDestiniesComponent } from './components/destinies/my-destinies/my-destinies.component';
+import { UserListComponent } from './components/user/user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -22,9 +24,11 @@ import { FooterComponent } from './components/misc/footer/footer.component';
     HomeComponent,
     UserProfileComponent,
     HeaderComponent,
+    FooterComponent,
+    MyStatsComponent,
+    DestinyFinderComponent,
     MyDestiniesComponent,
-    MyDestiniesListComponent,
-    FooterComponent
+    UserListComponent
   ],
   imports: [
     BrowserModule,
