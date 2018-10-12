@@ -15,15 +15,21 @@ export class LoginComponent {
   user: User = new User();
   apiError: ApiError;
 
-  constructor(private sessionsService: SessionsService, private router: Router) { }
+  constructor(
+    private sessionsService: SessionsService, 
+    private router: Router
+  ) { }
 
   onSubmitLogin(loginForm: FormGroup): void {
     if (loginForm.valid) {
       this.sessionsService.authenticate(this.user)
         .subscribe(
           () => {
+            this.user = this.sessionsService.user;
+            console.log('AFTER LOGIN:', this.user)
             loginForm.reset();
-            this.router.navigate(['/home']);
+            this.router.navigate([`/users/${this.user.id}`]);
+             //¡UNDEFINED!
           }, 
           (error: ApiError) => this.apiError = error
         );

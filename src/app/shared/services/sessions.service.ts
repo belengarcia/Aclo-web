@@ -32,7 +32,6 @@ export class SessionsService extends BaseApiService {
       .pipe(
         map((user: User) => {
           this.doAuthenticate(user);
-          console.log('dentro');
           console.log(user)
           return user;
         }),
@@ -50,7 +49,6 @@ export class SessionsService extends BaseApiService {
     return this.http.delete(SessionsService.SESSIONS_API, BaseApiService.defaultOptions)
       .pipe(
         map(()=> {
-          console.log('fuera');
           this.doLogout()}),
         catchError(this.handleError)
       );
