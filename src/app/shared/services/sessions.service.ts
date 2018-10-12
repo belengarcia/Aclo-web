@@ -32,7 +32,6 @@ export class SessionsService extends BaseApiService {
       .pipe(
         map((user: User) => {
           this.doAuthenticate(user);
-          console.log(user)
           return user;
         }),
         catchError(this.handleError)

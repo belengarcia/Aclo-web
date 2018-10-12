@@ -26,7 +26,6 @@ export class LoginComponent {
         .subscribe(
           () => {
             this.user = this.sessionsService.user;
-            console.log('AFTER LOGIN:', this.user)
             loginForm.reset();
             this.router.navigate([`/users/${this.user.id}`]);
              //¡UNDEFINED!

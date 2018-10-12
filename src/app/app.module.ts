@@ -15,6 +15,7 @@ import { HeaderComponent } from './components/misc/header/header.component';
 import { FooterComponent } from './components/misc/footer/footer.component';
 import { MyDestiniesComponent } from './components/destinies/my-destinies/my-destinies.component';
 import { UserListComponent } from './components/user/user-list/user-list.component';
+import { UserCardComponent } from './components/user/user-card/user-card.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { UserListComponent } from './components/user/user-list/user-list.compone
     MyStatsComponent,
     DestinyFinderComponent,
     MyDestiniesComponent,
-    UserListComponent
+    UserListComponent,
+    UserCardComponent
   ],
   imports: [
     BrowserModule,

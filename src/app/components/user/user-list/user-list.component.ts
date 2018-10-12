@@ -1,3 +1,7 @@
+import { Subscription } from 'rxjs';
+import { User } from './../../../shared/models/user.model';
+import { UserService } from './../../../shared/services/user.service';
+import { ApiError } from './../../../shared/models/ApiErro.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +11,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserListComponent implements OnInit {
 
-  constructor() { }
+  users: Array<User> = [];
+
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
+    console.log('inComponent')
+    this.userService.list()
+      .subscribe(
+        (users: User[]) => {
+          this.users = users
+        }
+      )
   }
 
 }
