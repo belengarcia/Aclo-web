@@ -12,17 +12,21 @@ import { Component, OnInit } from '@angular/core';
 export class UserListComponent implements OnInit {
 
   users: Array<User> = [];
+  finderPattern: string;
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    console.log('inComponent')
     this.userService.list()
       .subscribe(
         (users: User[]) => {
           this.users = users
         }
       )
+  }
+
+  onPatternChange(pattern: string) {
+    this.finderPattern = pattern;
   }
 
 }

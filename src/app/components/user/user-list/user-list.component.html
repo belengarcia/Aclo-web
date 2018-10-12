@@ -1,5 +1,2 @@
-
-Hola
-
-
-<app-user-card *ngFor='let user of users' [user]='user'>aqui</app-user-card>
+<app-user-finder (changePattern)="onPatternChange($event)"></app-user-finder>
+<app-user-card *ngFor='let user of users | findUser:finderPattern' [user]='user'></app-user-card>

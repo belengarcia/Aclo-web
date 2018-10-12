@@ -16,6 +16,8 @@ import { FooterComponent } from './components/misc/footer/footer.component';
 import { MyDestiniesComponent } from './components/destinies/my-destinies/my-destinies.component';
 import { UserListComponent } from './components/user/user-list/user-list.component';
 import { UserCardComponent } from './components/user/user-card/user-card.component';
+import { FindUserPipe } from './shared/pipes/find-user.pipe';
+import { UserFinderComponent } from './components/user/user-finder/user-finder.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { UserCardComponent } from './components/user/user-card/user-card.compone
     DestinyFinderComponent,
     MyDestiniesComponent,
     UserListComponent,
-    UserCardComponent
+    UserCardComponent,
+    FindUserPipe,
+    UserFinderComponent
   ],
   imports: [
     BrowserModule,
