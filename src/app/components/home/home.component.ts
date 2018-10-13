@@ -37,6 +37,8 @@ export class HomeComponent implements OnInit {
             this.router.navigate(['/destinies'])
           }
         )
+    } else {
+      console.log('no form')
     }
   }
 
