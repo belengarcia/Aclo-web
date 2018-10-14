@@ -6,4 +6,5 @@ export class FuckOff {
     to: String;
     message?: String;
     destiny: Destiny = new Destiny();
+    fav: boolean;
 }

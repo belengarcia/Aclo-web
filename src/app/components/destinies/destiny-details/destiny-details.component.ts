@@ -13,7 +13,7 @@ import { User } from 'src/app/shared/models/user.model';
   templateUrl: './destiny-details.component.html',
   styleUrls: ['./destiny-details.component.css']
 })
-export class DestinyFinderComponent implements OnInit {
+export class DestinyDetailsComponent implements OnInit {
   fuckOff: FuckOff = new FuckOff();
   user: User = new User()
 
@@ -36,4 +36,18 @@ export class DestinyFinderComponent implements OnInit {
     });
   }
 
+  onClickFav(): void {
+
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('id');
+
+      this.fuckOffsService.fav(id, this.user.id, this.fuckOff)
+      .subscribe(
+        (fuckOff: FuckOff) => {
+          this.fuckOff = fuckOff
+          console.log(fuckOff);
+        }
+      );
+    });
+  } 
 }
