@@ -13,8 +13,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  fuckOff: FuckOff = new FuckOff();
   apiError: ApiError;
   user: User; 
 
@@ -28,18 +26,13 @@ export class HomeComponent implements OnInit {
     this.user = this.sessionsService.user;
   }
 
-  onClickShitButton(form: FormGroup): void {
-    if(form.valid){
-      this.fuckOffsService.fuckYou(this.user.id, this.fuckOff)
+  onClickShitButton(): void {
+      this.fuckOffsService.fuckYou(this.user.id)
         .subscribe(
-          () => {
-            form.reset()
-            this.router.navigate(['/destinies'])
+          (fuckOff: FuckOff) => {
+            this.router.navigate([`/destinies/${fuckOff.id}`])
           }
         )
-    } else {
-      console.log('no form')
-    }
   }
 
 }
