@@ -1,10 +1,9 @@
-import { DestinyFinderComponent } from './components/destinies/destiny-details/destiny-details.component';
+import { DestinyDetailsComponent } from './components/destinies/destiny-details/destiny-details.component';
 import { MyStatsComponent } from './components/my-stats/my-stats.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, ErrorHandler } from '@angular/core';
+import { NgModule, ErrorHandler, ApplicationRef } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/misc/login/login.component';
@@ -20,6 +19,12 @@ import { FindUserPipe } from './shared/pipes/find-user.pipe';
 import { UserFinderComponent } from './components/user/user-finder/user-finder.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import { CommonModule } from '@angular/common';
+
+
+import { AgmCoreModule } from '@agm/core';
+import { MapComponent } from './components/destinies/map/map.component';
+
 
 @NgModule({
   declarations: [
@@ -31,12 +36,13 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
     HeaderComponent,
     FooterComponent,
     MyStatsComponent,
-    DestinyFinderComponent,
+    DestinyDetailsComponent,
     MyDestiniesComponent,
     UserListComponent,
     UserCardComponent,
     FindUserPipe,
-    UserFinderComponent
+    UserFinderComponent,
+    MapComponent
 
   ],
   imports: [
@@ -46,7 +52,11 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCheckboxModule,
-    MatButtonModule
+    MatButtonModule, 
+    CommonModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBaWJRBFCUYVRpyLEpJBrl8eB08XFGf7pY'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

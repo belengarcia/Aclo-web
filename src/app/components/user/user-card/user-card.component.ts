@@ -20,6 +20,7 @@ export class UserCardComponent {
     this.fuckOffsService.fuckYou(this.user.id)
       .subscribe(
         (fuckOff: FuckOff) => {
+          console.log(fuckOff)
           this.router.navigate([`/destinies/${fuckOff.id}`])
         }
       )

@@ -1,5 +1,5 @@
 import { UserListComponent } from './components/user/user-list/user-list.component';
-import { DestinyFinderComponent } from './components/destinies/destiny-details/destiny-details.component';
+import { DestinyDetailsComponent } from './components/destinies/destiny-details/destiny-details.component';
 import { MyStatsComponent } from './components/my-stats/my-stats.component';
 import { UserProfileComponent } from './components/user/user-profile/user-profile.component';
 import { HomeComponent } from './components/home/home.component';
@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'users/:id/profile', component: UserProfileComponent},
   { path: 'users/:id/myDestinies', component: MyDestiniesComponent},
   { path: 'users/:id/myStats', component: MyStatsComponent},
-  { path: 'destinies/:id', component: DestinyFinderComponent},
+  { path: 'destinies/:id', component: DestinyDetailsComponent},
 ];
 
 @NgModule({

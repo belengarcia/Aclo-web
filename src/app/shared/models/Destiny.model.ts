@@ -1,7 +1,7 @@
 export class Destiny {
     name: string;
     img: string;
-    coordinates?: [number];
+    coordinates: [number];
     placeId?: string;
     description?: string
 }
