@@ -1,3 +1,6 @@
+import { FuckOff } from './../../../shared/models/fuckOffs.model';
+import { FuckOffsService } from './../../../shared/services/fuck-offs.service';
+import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from './../../../shared/models/user.model';
 import { UserService } from './../../../shared/services/user.service';
@@ -10,10 +13,16 @@ import { Component, Input } from '@angular/core';
 })
 export class UserCardComponent {
   @Input() user: User = new User();
-  constructor(private router: Router) { }
 
-  onClickUser(): void {
-    this.router.navigate(['/phones', this.user.id]);
+  constructor(private router: Router, private fuckOffsService: FuckOffsService) { }
 
+  onClickShitButton(): void {
+    this.fuckOffsService.fuckYou(this.user.id)
+      .subscribe(
+        (fuckOff: FuckOff) => {
+          this.router.navigate([`/destinies/${fuckOff.id}`])
+        }
+      )
   }
+
 }
