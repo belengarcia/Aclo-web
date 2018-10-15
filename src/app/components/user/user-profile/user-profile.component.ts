@@ -25,4 +25,10 @@ export class UserProfileComponent implements OnInit {
         (user: User) => this.user = user
       );
   }
+
+  onClickLogout(): void {
+    this.sessionsService.logout().subscribe(() => {
+        this.router.navigate(['/login']);
+      });
+  }
 }

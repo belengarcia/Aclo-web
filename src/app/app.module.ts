@@ -2,8 +2,8 @@ import { DestinyDetailsComponent } from './components/destinies/destiny-details/
 import { MyStatsComponent } from './components/gamification/my-stats/my-stats.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler, ApplicationRef } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/misc/login/login.component';
@@ -24,6 +24,8 @@ import { MatTabsModule } from '@angular/material/tabs'
 import { MatIconModule } from '@angular/material/icon'
 import { MatCardModule } from '@angular/material/card'
 import { MatInputModule } from '@angular/material/input'
+import { MatDividerModule } from '@angular/material/divider'
+import { MatListModule } from '@angular/material/list'
 
 
 import { AgmCoreModule } from '@agm/core';
@@ -38,6 +40,9 @@ import { FavsFilterPipe } from './shared/pipes/favs-filter.pipe';
 import { RankingCardComponent } from './components/gamification/ranking-card/ranking-card.component';
 import { RankingRunnersListComponent } from './components/gamification/ranking-runners-list/ranking-runners-list.component';
 import { RunnersFilterPipe } from './shared/pipes/runners-filter.pipe';
+import { HatedListComponent } from './components/user/profile/hated-list/hated-list.component';
+import { HatedCardComponent } from './components/user/profile/hated-card/hated-card.component';
+import { HatesFilterPipe } from './shared/pipes/hates-filter.pipe';
 // import { UserFuckOffEmailComponent, DialogOverviewExampleDialog } from './components/user/user-fuck-off-email/user-fuck-off-email.component'
 
 @NgModule({
@@ -66,6 +71,9 @@ import { RunnersFilterPipe } from './shared/pipes/runners-filter.pipe';
     RankingCardComponent,
     RankingRunnersListComponent,
     RunnersFilterPipe,
+    HatedListComponent,
+    HatedCardComponent,
+    HatesFilterPipe,
     // DialogOverviewExampleDialog,
     // UserFuckOffEmailComponent
 
@@ -82,6 +90,8 @@ import { RunnersFilterPipe } from './shared/pipes/runners-filter.pipe';
     MatIconModule,
     MatCardModule,
     MatInputModule,
+    MatDividerModule,
+    MatListModule,
     CommonModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBaWJRBFCUYVRpyLEpJBrl8eB08XFGf7pY'

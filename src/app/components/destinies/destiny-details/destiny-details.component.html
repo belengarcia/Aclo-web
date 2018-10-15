@@ -1,5 +1,3 @@
-<!-- *ngFor='let fuckOff of fuckOffs' [fuckOff]='fuckOff' -->
-
 <mat-card class="example-card">
     <mat-card-header>
       <div>
@@ -7,13 +5,13 @@
                 matTooltip="Info about the action"
                 aria-label="Button that displays a tooltip when focused or hovered over"
                 (click)='onClickFav()'>
-            <mat-icon>favorite_border</mat-icon>
+            <mat-icon> {{fuckOff.fav ? 'favorite' : 'favorite_border'}}</mat-icon>
         </button> 
       </div>
       <mat-card-title> {{ fuckOff.destiny.name }} </mat-card-title>
       <mat-card-subtitle> What a lovely place!</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image [src]='fuckOff.destiny.img' alt="Photo of a Shiba Inu">
+    <img mat-card-image [src]='fuckOff.destiny.img' alt="Destiny Photo">
 </mat-card>
 
 <mat-card class="example-card">

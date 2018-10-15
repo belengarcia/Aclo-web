@@ -22,7 +22,6 @@ export class MyDestiniesComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.sessionsService.user;
-    console.log(this.user);
 
     this.fuckOffsService.list(this.user.id)
       .subscribe(
