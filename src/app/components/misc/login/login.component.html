@@ -2,28 +2,40 @@
   <h1>ACLO</h1>
 </div>
 
-<div class='login-container'>
+<mat-card>
   <form (ngSubmit)="onSubmitLogin(form)" #form= 'ngForm'>
-  <input type="text" [ngClass]="{ 'is-invalid': apiError || mail.errors && mail.touched }"
-  placeholder="Enter Email" name="mail" [(ngModel)]="user.mail" #mail="ngModel" required>
-  <div class="invalid-feedback" *ngIf="mail.errors && mail.touched && mail.errors.required">
-    <small>emm... did you forgot your email?</small>
-  </div>
+      <div class="example-container">
+        <mat-form-field>
+          <input matInput placeholder="Enter your email" 
+            name="mail" [(ngModel)]="user.mail" 
+            #mail="ngModel" required>
+        </mat-form-field>
 
-  <input type="password" [ngClass]="{ 'is-invalid': apiError || password.errors && password.touched }"
-    placeholder="Enter Password" name="password" [(ngModel)]="user.password" #password="ngModel" required>
-  <div class="invalid-feedback" *ngIf="password.errors && password.touched && password.errors.required">
-    <small>Hey! the password!</small>
-  </div>
+          <div class="invalid-feedback" *ngIf="mail.errors && mail.touched && mail.errors.required">
+            <small>emm... did you forgot your email?</small>
+          </div>
 
-  <button type="submit" [disabled]='!form.valid'>Login</button>
+        <mat-form-field>
+          <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" 
+            name="password" 
+            [(ngModel)]="user.password" 
+            #password="ngModel" required>
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        </mat-form-field>
+
+        <div class="invalid-feedback" *ngIf="password.errors && password.touched && password.errors.required">
+          <small>Hey! the password!</small>
+        </div>
+        
+      </div>
+    <button type="submit" [disabled]="!form.valid" >Register</button>
   </form>
 
   <div class="invalid-feedback" *ngIf="apiError">
     <small>{{ apiError.message }}</small>
   </div>
 
-</div>
+</mat-card>
 
 <div class="signin">
     <small>New around? <a [routerLink]="['/register']">Register</a>.</small>
@@ -32,53 +44,3 @@
 <div class='image'>
     <img src='../../../../../img/aclo-login.png' />
 </div>
-
-
-<!-- <div class='mother'>
-<form (ngSubmit)="onSubmitLogin(form)" #form= 'ngForm'>
-  <div class='mother-container'> 
-  <div class="container border-bottom margin-30">
-    <div class='login-form'>
-      <input type="text" [ngClass]="{ 'is-invalid': apiError || mail.errors && mail.touched }"
-      placeholder="Enter Email" name="mail" [(ngModel)]="user.mail" #mail="ngModel" required>
-      <div class="invalid-feedback" *ngIf="mail.errors && mail.touched && mail.errors.required">
-        emm... did you forgot your email?
-      </div>
-    </div>
-  </div>
-  <div class='container border-bottom margin-30'> 
-    <div class='login-form '>
-      <input type="password" [ngClass]="{ 'is-invalid': apiError || password.errors && password.touched }"
-      placeholder="Enter Password" name="password" [(ngModel)]="user.password" #password="ngModel" required>
-      <div class="invalid-feedback" *ngIf="password.errors && password.touched && password.errors.required">
-        Man, the password!
-      </div>
-    </div>
-  </div>
-
-    <button type="submit" [disabled]='!form.valid'>Login</button>
-  </div>
-
-  
-  <div class="container signin">
-    <p>New around? <a [routerLink]="['/register']">Register</a>.</p>
-  </div>
-</form>
-
-<img src='../../../../../img/aclo-login.png'>
-
-</div> -->
-
-
-<!-- <div class="input-group mb-3">
-  <input type="email" class="form-control" [ngClass]="{ 'is-invalid': apiError || email.errors && email.touched }"
-    placeholder="Email" name="email" [(ngModel)]="user.email" #email="ngModel" required email>
-  <div class="invalid-feedback" *ngIf="email.errors && email.touched && email.errors.required">
-    Please chose an email.
-  </div>
-  <div class="invalid-feedback" *ngIf="email.errors && email.touched && email.errors.email">
-    Please enter valid email.
-  </div>
-
-   
-</div> -->
