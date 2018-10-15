@@ -1,6 +1,8 @@
 
-<div>
-  <h3>{{user.name}}</h3>
-  <a [routerLink]="['/users', user.id]">Profile</a>
-  <button (click)="onClickShitButton()">Fuck you man!</button>
-</div>
+<mat-card [routerLink]="['/users', user.id]" class="example-card" >
+  <mat-card-header>
+    <img mat-card-avatar [src]='user.profilePic'/>
+    <mat-card-title> {{ user.name }} </mat-card-title>
+  </mat-card-header>
+  <!-- <button (click)="onClickShitButton()">Fuck you man!</button> -->
+</mat-card>

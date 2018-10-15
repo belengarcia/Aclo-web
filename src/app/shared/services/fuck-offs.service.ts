@@ -11,6 +11,7 @@ import { catchError, map} from 'rxjs/operators'
 })
 export class FuckOffsService extends BaseApiService{
   private static readonly FUCK_OFF_API=`${BaseApiService.BASE_API}/users`
+  
   private fuckOffs: Array<FuckOff> = [];
 
   constructor(private http: HttpClient) {
@@ -18,7 +19,7 @@ export class FuckOffsService extends BaseApiService{
   }
   
   //Este se usa en home
-  fuckYou(userId: String): Observable<FuckOff | ApiError> {
+  fuckYou(userId: string): Observable<FuckOff | ApiError> {
     return this.http.post<FuckOff>(`${FuckOffsService.FUCK_OFF_API}/${userId}/fuck-offs`, {}, BaseApiService.defaultOptions)
       .pipe(
         map((fuckOff: FuckOff) => Object.assign(new FuckOff(), fuckOff)),
@@ -26,16 +27,20 @@ export class FuckOffsService extends BaseApiService{
       );
   }
 
-  //este se usa en profile y myStats
-  list(userId: String): Observable<FuckOff | ApiError>{
-    return this.http.get<FuckOff>(`${FuckOffsService.FUCK_OFF_API}/${userId}/fuck-offs`, BaseApiService.defaultOptions)
+  //este se usa en profile, myStats y favs
+  list(userId: string): Observable<Array<FuckOff> | ApiError>{
+    return this.http.get<Array<FuckOff>>(`${FuckOffsService.FUCK_OFF_API}/${userId}/fuck-offs`, BaseApiService.defaultOptions)
       .pipe(
-        map((fuckOff: FuckOff) => Object.assign(new FuckOff(), fuckOff)),
+        map((fuckOffs: FuckOff[]) => {
+          fuckOffs = fuckOffs.map(fuckOff => Object.assign(new FuckOff(), fuckOff))
+          this.fuckOffs = fuckOffs
+          return fuckOffs
+        }),
         catchError(this.handleError)
       );
   }
 
-  fuckYouDetails(id: String, userId: String): Observable<FuckOff | ApiError>{
+  fuckYouDetails(id: string, userId: string): Observable<FuckOff | ApiError>{
     return this.http.get<FuckOff>(`${FuckOffsService.FUCK_OFF_API}/${userId}/fuck-offs/${id}`, BaseApiService.defaultOptions)
     .pipe(
       map((fuckOff: FuckOff) => Object.assign(new FuckOff(), fuckOff)),
@@ -43,7 +48,7 @@ export class FuckOffsService extends BaseApiService{
     );
   }
 
-  fav(id: String, userId: String, fuckOff: FuckOff): Observable<FuckOff |ApiError>{
+  fav(id: string, userId: string, fuckOff: FuckOff): Observable<FuckOff |ApiError>{
     return this.http.post<FuckOff>(`${FuckOffsService.FUCK_OFF_API}/${userId}/fuck-offs/${id}`, fuckOff, BaseApiService.defaultOptions)
       .pipe(
         map((fuckOff: FuckOff) => Object.assign(new FuckOff(), fuckOff)),

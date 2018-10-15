@@ -41,7 +41,7 @@ export class UserService extends BaseApiService {
       );
   }
 
-  get(id: String): Observable<User | ApiError> {
+  get(id: string): Observable<User | ApiError> {
     return this.http.get<User>(`${UserService.USER_API}/${id}`, BaseApiService.defaultOptions)
       .pipe(
         map((user: User) => Object.assign(new User(), user)),

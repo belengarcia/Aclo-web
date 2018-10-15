@@ -1,2 +1,11 @@
-Find your Hated Ones
-<input type='text' placeholder='search user' name='pattern' #pattern (keyup)="onChangePattern(pattern.value)">
+<div class='finder'>
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="User Name"
+          name='pattern' #pattern 
+          (keyup)="onChangePattern(pattern.value)">
+          <mat-hint>Find your hated ones</mat-hint>
+        </mat-form-field>
+    </form>
+</div>
+

@@ -1,9 +1,9 @@
 export class User {
-    id: String;
-    name: String;
-    mail: String;
-    password: String;
-    profilePic: String;
-    runAways?: Number;
+    id: string;
+    name: string;
+    mail: string;
+    password: string;
+    profilePic: string;
+    runAways?: number;
     personalHate?: Array<User>
 }

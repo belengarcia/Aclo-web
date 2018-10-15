@@ -1,8 +1,18 @@
-  <h1>Where do you want to go?</h1>
+<mat-card class='random'>
+  <p>Where do you wanna go?</p>
+  <div>
+    <button mat-raised-button 
+      color="accent" 
+      (click)='onClickShitButton()'>
+      I don't give a shit
+    </button>
+    <button mat-raised-button color="accent">Surprise me!</button>
+  </div>
+</mat-card>
 
-  <button (click)='onClickShitButton()'>I don't give a shit</button>
-  <button>Surprise me</button>
-  
-<div routerLinkActive="active">
-  <a [routerLink]="['/users']">I feel more like a hater today</a>
-</div>
+<mat-card [routerLink]="['/users']" class='hater'>
+  <p>I feel more like a HATER today</p>
+  <img src='../../../../img/hater.png'/>
+</mat-card>
+
+<button (click)='onClickLogout()'>Logout</button>

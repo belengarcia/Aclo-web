@@ -13,5 +13,4 @@ export class UserFinderComponent {
   onChangePattern(pattern: string) {
     this.changePattern.emit(pattern);
   }
-
 }

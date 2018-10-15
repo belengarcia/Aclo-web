@@ -18,6 +18,7 @@ export class BaseApiService {
   }
 
   // //si, esta le he copiado tal cual
+  
   protected handleError(error: HttpErrorResponse): Observable<ApiError> {
     console.error('An error occurred:', error);
     const apiError = new ApiError();

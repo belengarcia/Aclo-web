@@ -1,44 +1,39 @@
-<!-- 
-<input id="toggle" type="checkbox"/>
-<label class="hamburger" for="toggle">
-  <div class="top"></div>
-  <div class="meat"></div>
-  <div class="bottom"></div>
-</label>
-
-<div class="nav">
-  <div class="nav-wrapper">
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Blog</a>
-      <a href="#">Contact</a>
-    </nav>
-  </div>
-</div> -->
-
 <div *ngIf='user'>
-<input id="toggle" type="checkbox"/>
-<label class="hamburger" for="toggle">
-  <div class="top"></div>
-  <div class="meat"></div>
-  <div class="bottom"></div>
-</label>
+  <nav mat-tab-nav-bar>
+    <a mat-tab-link label="Home" 
+    [routerLink]="['/users', user.id]">
+      <mat-icon>home</mat-icon>
+    </a>
+    <a mat-tab-link label="Favs" 
+    [routerLink]="['/users', user.id, 'myDestinies']">
+      <mat-icon>favorite</mat-icon>
+    </a>
+    <a mat-tab-link label="Stats"
+    [routerLink]="['/users', user.id, 'myStats']">
+      <mat-icon>trending_up</mat-icon>
+    </a>
+    <a mat-tab-link label="Profile"
+    [routerLink]="['/users', user.id, 'profile']">
+      <mat-icon>perm_identity</mat-icon>
+    </a>
+  </nav>
+</div>
+
+<!-- headerPosition="below" -->
+
+<!-- <nav mat-tab-nav-bar>
+    <a mat-tab-link
+       *ngFor="let link of navLinks"
+       [routerLink]="link.path"
+       routerLinkActive #rla="routerLinkActive"
+       [active]="rla.isActive">
+      {{link.label}}
+    </a>
 
 
-<div class="nav">
-    <div class='nav-wrapper'>
-        <nav routerLinkActive="active">
-            <a class="active" [routerLink]="['/users', user.id]">Aclo</a>
-            <a [routerLink]="['/users', user.id, 'myDestinies']">My Favourites</a>
-            <a [routerLink]="['/users', user.id, 'myStats']">My Stats</a>
-            <a [routerLink]="['/users', user.id, 'profile']">{{user.name}}</a>
-            <div class='left-menu'>
-                <div routerLinkActive="active">
-                    <button (click)="onClickLogout()">Logout</button>
-                </div>
-            </div>
-        </nav>
-    </div>
-</div>
-</div>
+    <a class="active" [routerLink]="['/users', user.id]"><mat-icon>home</mat-icon></a>
+    <a [routerLink]="['/users', user.id, 'myDestinies']"><mat-icon>favorite</mat-icon></a>
+    <a [routerLink]="['/users', user.id, 'myStats']"><mat-icon>trending_up</mat-icon></a>
+    <a [routerLink]="['/users', user.id, 'profile']"><mat-icon>perm_identity</mat-icon></a>
+
+  </nav> -->

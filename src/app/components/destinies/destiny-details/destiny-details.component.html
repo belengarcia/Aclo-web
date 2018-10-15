@@ -1,8 +1,23 @@
-<p>
-{{ fuckOff.destiny.name }}
-</p>
-<button (click)='onClickFav()'>Fav</button>
-<img [src]='fuckOff.destiny.img'/>
-<app-map></app-map>
-
 <!-- *ngFor='let fuckOff of fuckOffs' [fuckOff]='fuckOff' -->
+
+<mat-card class="example-card">
+    <mat-card-header>
+      <div>
+        <button mat-raised-button
+                matTooltip="Info about the action"
+                aria-label="Button that displays a tooltip when focused or hovered over"
+                (click)='onClickFav()'>
+            <mat-icon>favorite_border</mat-icon>
+        </button> 
+      </div>
+      <mat-card-title> {{ fuckOff.destiny.name }} </mat-card-title>
+      <mat-card-subtitle> What a lovely place!</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]='fuckOff.destiny.img' alt="Photo of a Shiba Inu">
+</mat-card>
+
+<mat-card class="example-card">
+    <mat-card-content>
+        <app-map></app-map>
+    </mat-card-content>
+</mat-card>
