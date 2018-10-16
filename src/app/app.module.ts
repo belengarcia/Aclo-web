@@ -26,6 +26,7 @@ import { UpsComponent } from './components/misc/ups/ups.component';
 import { DestiniesCardComponent } from './components/destinies/destinies-card/destinies-card.component';
 import { MyStatsComponent } from './components/gamification/my-stats/my-stats.component';
 import { DestinyDetailsComponent } from './components/destinies/destiny-details/destiny-details.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -42,6 +43,7 @@ import { MatListModule } from '@angular/material/list'
 import { FavsFilterPipe } from './shared/pipes/favs-filter.pipe';
 import { FindDestinyPipe } from './shared/pipes/find-destiny.pipe';
 import { FindUserPipe } from './shared/pipes/find-user.pipe';
+
 
 @NgModule({
   declarations: [
@@ -67,7 +69,8 @@ import { FindUserPipe } from './shared/pipes/find-user.pipe';
     RankingRunnersListComponent,
     HatedListComponent,
     HatedCardComponent,
-    FindDestinyPipe
+    FindDestinyPipe,
+    NotificationsComponent
 
   ],
   imports: [

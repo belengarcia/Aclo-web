@@ -11,12 +11,19 @@
                 name="name" [(ngModel)]="user.name" 
                 #name="ngModel" required>
             </mat-form-field>
+            <div class="invalid-feedback" *ngIf="name.errors && name.touched && name.errors.required">
+                <small>you don't have a name or what?</small>
+              </div>
 
             <mat-form-field>
               <input matInput placeholder="Enter your email" 
                 name="mail" [(ngModel)]="user.mail" 
                 #mail="ngModel" required>
             </mat-form-field>
+            
+            <div class="invalid-feedback" *ngIf="mail.errors && mail.touched && mail.errors.required">
+              <small>Sorry, but mail is mandatory</small>
+            </div>
 
             <mat-form-field>
                 <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" 
@@ -25,6 +32,10 @@
                   #password="ngModel" required>
                 <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
             </mat-form-field>
+            <div class="invalid-feedback" *ngIf="password.errors && password.touched && password.errors.required">
+                <small>Hey! the password!</small>
+              </div>
+
         </div>
         <button type="submit" [disabled]="!form.valid" >Register</button>
       </form>
