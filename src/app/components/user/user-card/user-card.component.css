@@ -2,6 +2,7 @@
     max-width: 400px;
     border-top: 4px solid black;
     margin: 16px;
+    padding: 16px;
   }
   
   .example-header-image {
@@ -9,6 +10,6 @@
     background-size: cover;
   }
 
-  .mat-card-subtitle {
+  .mat-card-subtitle a {
     color: red;
   }

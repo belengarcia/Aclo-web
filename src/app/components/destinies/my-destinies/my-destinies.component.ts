@@ -17,6 +17,8 @@ export class MyDestiniesComponent implements OnInit {
   fuckOffs: Array<FuckOff> = [];
   user: User = new User();
 
+  finderPattern: string;
+
 
   constructor(private fuckOffsService: FuckOffsService, private sessionsService: SessionsService) { }
 
@@ -32,4 +34,7 @@ export class MyDestiniesComponent implements OnInit {
       )
   }
 
+  onPatternChange(pattern: string) {
+    this.finderPattern = pattern;
+  }
 }

@@ -1,1 +1,2 @@
-<app-destinies-card *ngFor='let fuckOff of fuckOffs | favsFilter' [fuckOff]='fuckOff'></app-destinies-card>
+<app-user-finder (changePattern)="onPatternChange($event)"></app-user-finder>
+<app-destinies-card *ngFor='let fuckOff of fuckOffs | favsFilter | findDestiny:finderPattern' [fuckOff]='fuckOff'></app-destinies-card>
