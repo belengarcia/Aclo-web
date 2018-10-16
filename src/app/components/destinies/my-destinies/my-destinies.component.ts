@@ -29,7 +29,6 @@ export class MyDestiniesComponent implements OnInit {
       .subscribe(
         (fuckOffs: FuckOff[]) => {
           this.fuckOffs = fuckOffs
-          console.log(this.fuckOffs)
         }
       )
   }

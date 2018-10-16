@@ -40,7 +40,6 @@ export class MapComponent implements OnInit {
             this.fuckOff = fuckOff
             this.lat = fuckOff.destiny.coordinates[0];
             this.lng = fuckOff.destiny.coordinates[1];
-            console.log(this.fuckOff)
           }
         );
     });

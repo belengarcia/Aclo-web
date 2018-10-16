@@ -45,7 +45,6 @@ export class DestinyDetailsComponent implements OnInit {
       .subscribe(
         (fuckOff: FuckOff) => {
           this.fuckOff = fuckOff
-          console.log(fuckOff);
         }
       );
     });
