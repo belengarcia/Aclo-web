@@ -21,12 +21,16 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'users', canActivate: [AuthGuard], component: UserListComponent},
   { path: 'users/:id', canActivate: [AuthGuard], component: HomeComponent},
+  
   { path: 'users/:id/profile', canActivate: [AuthGuard], component: UserProfileComponent},
+
   { path: 'users/:id/myDestinies', canActivate: [AuthGuard], component: MyDestiniesComponent},
   { path: 'users/:id/myStats', canActivate: [AuthGuard], component: MyStatsComponent},
+
   { path: 'destinies/:id', canActivate: [AuthGuard], component: DestinyDetailsComponent},
+  
   { path: '404', component: NotFoundComponent},
-  // { path: 'ups', component: UpsComponent},
+  { path: 'ups', component: UpsComponent},
 
   
 ];

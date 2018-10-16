@@ -43,6 +43,7 @@ import { MatListModule } from '@angular/material/list'
 import { FavsFilterPipe } from './shared/pipes/favs-filter.pipe';
 import { FindDestinyPipe } from './shared/pipes/find-destiny.pipe';
 import { FindUserPipe } from './shared/pipes/find-user.pipe';
+import { PipesPipe } from './shared/pipes/hated-filter.pipe';
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import { FindUserPipe } from './shared/pipes/find-user.pipe';
     HatedListComponent,
     HatedCardComponent,
     FindDestinyPipe,
-    NotificationsComponent
+    NotificationsComponent,
+    PipesPipe
 
   ],
   imports: [

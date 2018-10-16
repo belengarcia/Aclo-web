@@ -11,7 +11,7 @@ import {Router} from '@angular/router'
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
-  user: User = new User();
+  user: User;
 
   constructor(
     private router: Router,

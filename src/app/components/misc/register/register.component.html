@@ -16,9 +16,13 @@
               </div>
 
             <mat-form-field>
-              <input matInput placeholder="Enter your email" 
-                name="mail" [(ngModel)]="user.mail" 
-                #mail="ngModel" required>
+              <input matInput 
+                placeholder="Enter your email" 
+                name="mail" 
+                [(ngModel)]="user.mail" 
+                #mail="ngModel" 
+                pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" 
+                required>
             </mat-form-field>
             
             <div class="invalid-feedback" *ngIf="mail.errors && mail.touched && mail.errors.required">

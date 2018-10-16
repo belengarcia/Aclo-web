@@ -4,3 +4,13 @@
   align-items: center;
   justify-content: space-around;
 }
+
+.navMolona {
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  z-index: 1;
+  width: 100%;
+  border-top: 3px solid #ff6060;
+  position: fixed;
+}

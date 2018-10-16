@@ -27,15 +27,3 @@ export class HatedListComponent implements OnInit {
   }
 
 }
-
-// list(): Observable<Array<User> | ApiError> {
-//   return this.http.get<Array<User>>(UserService.USER_API, BaseApiService.defaultOptions)
-//     .pipe(
-//       map((users: Array<User>) => {
-//         users = users.map(user => Object.assign(new User(), user));
-//         this.users = users;
-//         return users;
-//       }),
-//       catchError(this.handleError)
-//     );
-// }
