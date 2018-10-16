@@ -17,7 +17,8 @@ import { Injectable, ErrorHandler} from '@angular/core';
           .subscribe(() => {
             window.location.href = '/login';
           });
-      } else if (error instanceof ApiError && error.status === 404){
+      } 
+      else if (error instanceof ApiError && error.status === 404){
         window.location.href = '/404'
       } 
       // else if (error instanceof ApiError && error.status === 500){

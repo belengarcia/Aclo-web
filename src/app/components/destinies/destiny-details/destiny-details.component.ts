@@ -14,7 +14,7 @@ import { User } from 'src/app/shared/models/user.model';
   styleUrls: ['./destiny-details.component.css']
 })
 export class DestinyDetailsComponent implements OnInit {
-  fuckOff: FuckOff = new FuckOff();
+  fuckOff: FuckOff;
   user: User = new User()
 
   constructor(

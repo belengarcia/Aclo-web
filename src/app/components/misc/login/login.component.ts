@@ -11,6 +11,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  hide = true;
 
   user: User = new User();
   apiError: ApiError;
