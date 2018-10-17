@@ -1,7 +1,7 @@
 import { SessionsService } from './../../../shared/services/sessions.service';
 import { FuckOffsService } from './../../../shared/services/fuck-offs.service';
 import { FuckOff } from './../../../shared/models/fuckOffs.model';
-import { Subscription } from 'rxjs'; //lo necesitaremos
+import { Subscription } from 'rxjs';
 import { User } from './../../../shared/models/user.model';
 import { ApiError } from './../../../shared/models/ApiErro.model';
 import { Component, OnInit } from '@angular/core';
@@ -16,6 +16,7 @@ export class MyDestiniesComponent implements OnInit {
 
   fuckOffs: Array<FuckOff> = [];
   user: User = new User();
+  onFuckOffChangesSubscription: Subscription; 
 
   finderPattern: string;
 
@@ -31,6 +32,14 @@ export class MyDestiniesComponent implements OnInit {
           this.fuckOffs = fuckOffs
         }
       )
+    this.onFuckOffChangesSubscription = this.fuckOffsService.onFuckOffChanges()
+        .subscribe(
+          (fuckOffs: Array<FuckOff>) => this.fuckOffs = fuckOffs
+        );
+  }
+
+  ngOnDestroy(): void {
+    this.onFuckOffChangesSubscription.unsubscribe();
   }
 
   onPatternChange(pattern: string) {

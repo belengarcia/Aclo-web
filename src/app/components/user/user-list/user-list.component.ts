@@ -3,6 +3,7 @@ import { User } from './../../../shared/models/user.model';
 import { UserService } from './../../../shared/services/user.service';
 import { ApiError } from './../../../shared/models/ApiErro.model';
 import { Component, OnInit } from '@angular/core';
+// import { SnotifyService, SnotifyPosition, SnotifyToastConfig } from 'ng-snotify';
 
 @Component({
   selector: 'app-user-list',
@@ -14,13 +15,16 @@ export class UserListComponent implements OnInit {
   users: Array<User> = [];
   finderPattern: string;
 
-  constructor(private userService: UserService) { }
+  constructor(
+    private userService: UserService,
+    // private snotifyService: SnotifyService
+  ) { }
 
   ngOnInit() {
     this.userService.list()
       .subscribe(
         (users: User[]) => {
-          this.users = users
+          this.users = users;
         }
       )
   }

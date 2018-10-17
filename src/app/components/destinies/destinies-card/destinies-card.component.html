@@ -1,12 +1,9 @@
-<!-- <div>
-  <a [routerLink]="['/destinies', fuckOff.id]">Profile</a>
-</div> -->
-<!-- <button (click)="onClickShitButton()">Fuck you man!</button> -->
-
-
-<mat-card [routerLink]="['/destinies', fuckOff.id]" class="example-card" >
+<mat-card class="example-card" >
   <mat-card-header>
-    <img mat-card-avatar [src]='fuckOff.destiny.img'/>
+    <img [routerLink]="['/destinies', fuckOff.id]" mat-card-avatar [src]='fuckOff.destiny.img'/>
     <mat-card-title> {{ fuckOff.destiny.name }} </mat-card-title>
   </mat-card-header>
+  <button (click)='onClickFav()'>
+      <mat-icon> {{fuckOff.fav ? 'favorite' : 'favorite_border'}}</mat-icon>
+  </button> 
 </mat-card>

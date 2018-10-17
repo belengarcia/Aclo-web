@@ -14,13 +14,16 @@ import { Component, Input } from '@angular/core';
 export class UserCardComponent {
   @Input() user: User = new User();
 
+  success: boolean = false;
+
   constructor(private router: Router, private fuckOffsService: FuckOffsService) { }
 
   onClickShitButton(): void {
     this.fuckOffsService.fuckYou(this.user.id)
       .subscribe(
         (fuckOff: FuckOff) => {
-          this.router.navigate([`/destinies/${fuckOff.id}`])
+          this.router.navigate([`/destinies/${fuckOff.id}`]);
+          this.success = true;
         }
       )
   }
