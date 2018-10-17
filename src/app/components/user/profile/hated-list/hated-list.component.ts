@@ -18,10 +18,13 @@ export class HatedListComponent implements OnInit {
   ngOnInit() {
     this.user = this.sessionsService.user;
 
-    this.userService.list()
+    this.userService.hatedList()
       .subscribe(
         (users: User[]) => {
-          this.users = users;
+          let filteredUsers = users.filter((item, pos) => {
+            return users.indexOf(item) === pos;
+          })
+          this.users = filteredUsers;
         }
       )
   }

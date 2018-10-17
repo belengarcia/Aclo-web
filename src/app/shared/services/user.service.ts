@@ -1,6 +1,7 @@
+
+import { User } from 'src/app/shared/models/user.model';
 import { ApiError } from './../models/ApiErro.model';
 import { BaseApiService } from './web-api.service';
-import {User} from '../models/user.model';
 import {HttpClient} from '@angular/common/http'
 import { Observable, Subject } from 'rxjs';
 import { catchError, map} from 'rxjs/operators'
@@ -40,6 +41,22 @@ export class UserService extends BaseApiService {
         catchError(this.handleError)
       );
   }
+
+  hatedList(): Observable<Array<User | ApiError>> {
+    return this.http.get<Array<User>>(`${UserService.USER_API}/hated`, BaseApiService.defaultOptions)
+      .pipe(
+        map((users: Array<User>) => {
+          users = users.map(user => Object.assign(new User(), user));
+          this.users = users;
+          return users;
+        }),
+        // catchError(this.handleError)
+      );
+  }
+
+// uniqueArray = a.filter(function(item, pos) {
+//     return a.indexOf(item) == pos;
+// })
 
   get(id: string): Observable<User | ApiError> {
     return this.http.get<User>(`${UserService.USER_API}/${id}`, BaseApiService.defaultOptions)
