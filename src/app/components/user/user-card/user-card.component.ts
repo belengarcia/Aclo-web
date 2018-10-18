@@ -1,3 +1,4 @@
+import { MySnotifyServiceService } from './../../../shared/services/my-snotify-service.service';
 import { FuckOff } from './../../../shared/models/fuckOffs.model';
 import { FuckOffsService } from './../../../shared/services/fuck-offs.service';
 import { FormGroup } from '@angular/forms';
@@ -16,12 +17,13 @@ export class UserCardComponent {
 
   success: boolean = false;
 
-  constructor(private router: Router, private fuckOffsService: FuckOffsService) { }
+  constructor(private router: Router, private fuckOffsService: FuckOffsService, private mySnotifyServiceService: MySnotifyServiceService) { }
 
   onClickShitButton(): void {
     this.fuckOffsService.fuckYou(this.user.id)
       .subscribe(
         (fuckOff: FuckOff) => {
+          this.mySnotifyServiceService.onSuccess();
           this.router.navigate([`/destinies/${fuckOff.id}`]);
           this.success = true;
         }

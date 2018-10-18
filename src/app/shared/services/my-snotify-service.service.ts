@@ -1,17 +1,13 @@
+import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { SnotifyService, SnotifyPosition, SnotifyToastConfig } from 'ng-snotify';
 import { Component, OnInit, Input } from '@angular/core';
-import {Observable} from 'rxjs';
-import {SnotifyService, SnotifyPosition, SnotifyToastConfig} from 'ng-snotify';
-import { UseExistingWebDriver } from 'protractor/built/driverProviders';
-import { User } from 'src/app/shared/models/user.model';
 
-@Component({
-  selector: 'app-notifications',
-  templateUrl: './notifications.component.html',
-  styleUrls: ['./notifications.component.css']
+
+@Injectable({
+  providedIn: 'root'
 })
-export class NotificationsComponent {
-
-  // @Input() user: User = new User();
+export class MySnotifyServiceService {
 
   style = 'Simple';
   title = 'Congratulations!';
@@ -55,5 +51,4 @@ export class NotificationsComponent {
   onSuccess() {
     this.snotifyService.success(this.body, this.title, this.getConfig());
   }
-
 }

@@ -13,3 +13,8 @@
   .mat-card-subtitle a {
     color: red;
   }
+
+
+.mat-card-avatar {
+  object-fit: cover;
+}

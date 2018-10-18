@@ -3,7 +3,6 @@ import { User } from './../../../shared/models/user.model';
 import { UserService } from './../../../shared/services/user.service';
 import { ApiError } from './../../../shared/models/ApiErro.model';
 import { Component, OnInit } from '@angular/core';
-// import { SnotifyService, SnotifyPosition, SnotifyToastConfig } from 'ng-snotify';
 
 @Component({
   selector: 'app-user-list',
@@ -17,7 +16,6 @@ export class UserListComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    // private snotifyService: SnotifyService
   ) { }
 
   ngOnInit() {
