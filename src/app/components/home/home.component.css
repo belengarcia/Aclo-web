@@ -6,6 +6,7 @@
 
 .mat-fab.mat-accent, .mat-flat-button.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent {
     margin: 6px;
+    background-color: #ffd740;
 }
 
 .mat-card {

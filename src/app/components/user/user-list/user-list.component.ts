@@ -14,13 +14,15 @@ export class UserListComponent implements OnInit {
   users: Array<User> = [];
   finderPattern: string;
 
-  constructor(private userService: UserService) { }
+  constructor(
+    private userService: UserService,
+  ) { }
 
   ngOnInit() {
     this.userService.list()
       .subscribe(
         (users: User[]) => {
-          this.users = users
+          this.users = users;
         }
       )
   }

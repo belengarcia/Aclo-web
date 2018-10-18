@@ -3,3 +3,7 @@ p {
     color: grey;
     padding: 5px;
 }
+
+.mat-card {
+    margin: 10px;
+}

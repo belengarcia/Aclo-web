@@ -18,12 +18,21 @@ export class HatedListComponent implements OnInit {
   ngOnInit() {
     this.user = this.sessionsService.user;
 
-    this.userService.list()
+    this.userService.hatedList()
       .subscribe(
         (users: User[]) => {
+          console.log(users)
           this.users = users;
         }
       )
   }
 
 }
+
+// arrayVehiculosFilterBySerie.reduce(function (prev, current) {//Don't add the same Series twice
+// if (prev.indexOf(current[1]) == -1) {
+//     prev.push(current[1])
+//     common.addOptionSelect("selectModelo", current[6], current[1])
+// }
+// return prev;
+// }, []); 

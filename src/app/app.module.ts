@@ -26,8 +26,6 @@ import { UpsComponent } from './components/misc/ups/ups.component';
 import { DestiniesCardComponent } from './components/destinies/destinies-card/destinies-card.component';
 import { MyStatsComponent } from './components/gamification/my-stats/my-stats.component';
 import { DestinyDetailsComponent } from './components/destinies/destiny-details/destiny-details.component';
-import { NotificationsComponent } from './components/notifications/notifications.component';
-
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
@@ -44,6 +42,8 @@ import { FavsFilterPipe } from './shared/pipes/favs-filter.pipe';
 import { FindDestinyPipe } from './shared/pipes/find-destiny.pipe';
 import { FindUserPipe } from './shared/pipes/find-user.pipe';
 import { PipesPipe } from './shared/pipes/hated-filter.pipe';
+import { ToastDefaults, SnotifyService } from 'ng-snotify';
+import { FooterComponent } from './components/misc/footer/footer.component';
 
 
 @NgModule({
@@ -71,8 +71,8 @@ import { PipesPipe } from './shared/pipes/hated-filter.pipe';
     HatedListComponent,
     HatedCardComponent,
     FindDestinyPipe,
-    NotificationsComponent,
-    PipesPipe
+    PipesPipe,
+    FooterComponent
 
   ],
   imports: [
@@ -98,7 +98,10 @@ import { PipesPipe } from './shared/pipes/hated-filter.pipe';
     {
       provide: ErrorHandler,
       useClass: GlobalErrorHandlerService
-    }
+    }, { 
+      provide: 'SnotifyToastConfig', 
+      useValue: ToastDefaults},
+      SnotifyService
   ],
   bootstrap: [AppComponent]
 })
