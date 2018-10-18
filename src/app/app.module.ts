@@ -36,13 +36,14 @@ import { MatCardModule } from '@angular/material/card'
 import { MatInputModule } from '@angular/material/input'
 import { MatDividerModule } from '@angular/material/divider'
 import { MatListModule } from '@angular/material/list'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 
 import { FavsFilterPipe } from './shared/pipes/favs-filter.pipe';
 import { FindDestinyPipe } from './shared/pipes/find-destiny.pipe';
 import { FindUserPipe } from './shared/pipes/find-user.pipe';
 import { PipesPipe } from './shared/pipes/hated-filter.pipe';
-import { ToastDefaults, SnotifyService } from 'ng-snotify';
 import { FooterComponent } from './components/misc/footer/footer.component';
 
 
@@ -89,6 +90,7 @@ import { FooterComponent } from './components/misc/footer/footer.component';
     MatInputModule,
     MatDividerModule,
     MatListModule,
+    MatProgressSpinnerModule,
     CommonModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBaWJRBFCUYVRpyLEpJBrl8eB08XFGf7pY'
@@ -98,10 +100,7 @@ import { FooterComponent } from './components/misc/footer/footer.component';
     {
       provide: ErrorHandler,
       useClass: GlobalErrorHandlerService
-    }, { 
-      provide: 'SnotifyToastConfig', 
-      useValue: ToastDefaults},
-      SnotifyService
+    },
   ],
   bootstrap: [AppComponent]
 })

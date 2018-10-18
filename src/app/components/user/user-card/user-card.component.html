@@ -7,10 +7,10 @@
   </mat-card-header>
 </mat-card>
 
-<!-- 
-  Import notification component with *ngIf="success"
-  <notification>
-  </notification>
+<div class="notification" [class.success]="clicked === true" >
+  <h3>Sucessfully sent someone to fuck off!</h3>
+</div>
 
--->
-
+<div class="preloader">
+  <img src="" />
+</div>

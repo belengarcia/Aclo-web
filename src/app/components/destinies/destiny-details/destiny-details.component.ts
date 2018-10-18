@@ -7,7 +7,6 @@ import { map } from 'rxjs/operators';
 import { Placeholder } from '@angular/compiler/src/i18n/i18n_ast';
 import { User } from 'src/app/shared/models/user.model';
 
-
 @Component({
   selector: 'app-destiny-details',
   templateUrl: './destiny-details.component.html',
@@ -20,7 +19,7 @@ export class DestinyDetailsComponent implements OnInit {
   constructor(
     private fuckOffsService: FuckOffsService, 
     private route: ActivatedRoute, 
-    private sessionsService: SessionsService
+    private sessionsService: SessionsService,
   ) { }
 
   ngOnInit() {

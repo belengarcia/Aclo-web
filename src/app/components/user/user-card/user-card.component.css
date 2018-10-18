@@ -18,3 +18,33 @@
 .mat-card-avatar {
   object-fit: cover;
 }
+
+.notification {
+  position: fixed;
+  top: 1em;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  background-color: green;
+  height: 15vh;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+.notification.success {
+  animation-name: show;
+  animation-duration: 4s;
+}
+
+@keyframes show {
+  0% { opacity: 0 }
+  20% { opacity: 1 }
+  80% { opacity: 1 }
+  100% { opacity: 0 }
+}

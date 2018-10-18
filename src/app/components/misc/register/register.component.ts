@@ -16,10 +16,13 @@ export class RegisterComponent {
   user: User = new User();
   apiError: ApiError;
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(
+    private userService: UserService, 
+    private router: Router,
+  ) { }
 
   onSubmitRegister(registerForm: FormGroup): void {
-    if(registerForm.valid){
+    if(registerForm.valid) {
       this.userService.create(this.user)
         .subscribe(
           () => {
