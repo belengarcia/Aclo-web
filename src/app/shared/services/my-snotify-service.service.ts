@@ -49,6 +49,7 @@ export class MySnotifyServiceService {
   }
 
   onSuccess() {
-    this.snotifyService.success(this.body, this.title, this.getConfig());
+    //this.snotifyService.success(this.body, this.title, this.getConfig());
+    this.snotifyService.success("HOLAAA");
   }
 }
