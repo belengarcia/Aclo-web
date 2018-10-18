@@ -21,10 +21,8 @@ export class HatedListComponent implements OnInit {
     this.userService.hatedList()
       .subscribe(
         (users: User[]) => {
-          let filteredUsers = users.filter((item, pos) => {
-            return users.indexOf(item) === pos;
-          })
-          this.users = filteredUsers;
+          console.log(users)
+          this.users = users;
         }
       )
   }

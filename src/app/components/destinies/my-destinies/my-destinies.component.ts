@@ -34,7 +34,10 @@ export class MyDestiniesComponent implements OnInit {
       )
     this.onFuckOffChangesSubscription = this.fuckOffsService.onFuckOffChanges()
         .subscribe(
-          (fuckOffs: Array<FuckOff>) => this.fuckOffs = fuckOffs
+          (fuckOffs: Array<FuckOff>) => {
+            this.fuckOffs = fuckOffs
+          }
+         
         );
   }
 

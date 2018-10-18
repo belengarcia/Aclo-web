@@ -43,6 +43,7 @@ import { FindDestinyPipe } from './shared/pipes/find-destiny.pipe';
 import { FindUserPipe } from './shared/pipes/find-user.pipe';
 import { PipesPipe } from './shared/pipes/hated-filter.pipe';
 import { ToastDefaults, SnotifyService } from 'ng-snotify';
+import { FooterComponent } from './components/misc/footer/footer.component';
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import { ToastDefaults, SnotifyService } from 'ng-snotify';
     HatedListComponent,
     HatedCardComponent,
     FindDestinyPipe,
-    PipesPipe
+    PipesPipe,
+    FooterComponent
 
   ],
   imports: [

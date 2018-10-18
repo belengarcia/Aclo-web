@@ -2,8 +2,8 @@
   <mat-card-header>
     <img [routerLink]="['/destinies', fuckOff.id]" mat-card-avatar [src]='fuckOff.destiny.img'/>
     <mat-card-title> {{ fuckOff.destiny.name }} </mat-card-title>
-  </mat-card-header>
-  <button (click)='onClickFav()'>
+    <button (click)='onClickFav()'>
       <mat-icon> {{fuckOff.fav ? 'favorite' : 'favorite_border'}}</mat-icon>
-  </button> 
+    </button> 
+  </mat-card-header>
 </mat-card>
