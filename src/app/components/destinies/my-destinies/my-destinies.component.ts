@@ -26,19 +26,21 @@ export class MyDestiniesComponent implements OnInit {
   ngOnInit() {
     this.user = this.sessionsService.user;
 
+    this.getFuckOffs();
+    
+    this.onFuckOffChangesSubscription = this.fuckOffsService.onFuckOffChanges()
+        .subscribe((fuckOffs: Array<FuckOff>) => {
+          this.getFuckOffs()
+        });
+  }
+
+  private getFuckOffs() {
     this.fuckOffsService.list(this.user.id)
       .subscribe(
         (fuckOffs: FuckOff[]) => {
           this.fuckOffs = fuckOffs
         }
       )
-    this.onFuckOffChangesSubscription = this.fuckOffsService.onFuckOffChanges()
-        .subscribe(
-          (fuckOffs: Array<FuckOff>) => {
-            this.fuckOffs = fuckOffs
-          }
-         
-        );
   }
 
   ngOnDestroy(): void {
