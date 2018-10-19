@@ -12,13 +12,14 @@ import { Injectable, ErrorHandler} from '@angular/core';
       private sessionService: SessionsService) { }
   
     handleError(error: ApiError | Error | HttpErrorResponse) {
-      if (error instanceof ApiError && error.status === 403) {
-        this.sessionService.logout()
-          .subscribe(() => {
-            window.location.href = '/login';
-          });
-      } 
-      else if (error instanceof ApiError && error.status === 404){
+      // if (error instanceof ApiError && error.status === 403) {
+      //   this.sessionService.logout()
+      //     .subscribe(() => {
+      //       window.location.href = '/login';
+      //     });
+      // } 
+      // else 
+      if (error instanceof ApiError && error.status === 404){
         window.location.href = '/404'
       } 
       // else if (error instanceof ApiError && error.status === 500){

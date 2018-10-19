@@ -4,6 +4,4 @@ export class User {
     mail: string;
     password: string;
     profilePic: string;
-    runAways?: number;
-    personalHate?: Array<User>
 }

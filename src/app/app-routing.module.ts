@@ -1,3 +1,4 @@
+import { RankingRunnersListComponent } from './components/gamification/ranking-runners-list/ranking-runners-list.component';
 import { UpsComponent } from './components/misc/ups/ups.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { UserListComponent } from './components/user/user-list/user-list.component';
@@ -25,7 +26,7 @@ const routes: Routes = [
   { path: 'users/:id/profile', canActivate: [AuthGuard], component: UserProfileComponent},
 
   { path: 'users/:id/myDestinies', canActivate: [AuthGuard], component: MyDestiniesComponent},
-  { path: 'users/:id/myStats', canActivate: [AuthGuard], component: MyStatsComponent},
+  { path: 'users/:id/stats', canActivate: [AuthGuard], component: RankingRunnersListComponent},
 
   { path: 'destinies/:id', canActivate: [AuthGuard], component: DestinyDetailsComponent},
   
@@ -40,5 +41,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
-// [`/users/${user.id}/myDestinies`]

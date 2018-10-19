@@ -42,7 +42,7 @@ export class UserService extends BaseApiService {
       );
   }
 
-  hatedList(): Observable<Array<User | ApiError>> {
+  hatedList(): Observable<Array<User> | ApiError> {
     return this.http.get<Array<User>>(`${UserService.USER_API}/hated`, BaseApiService.defaultOptions)
       .pipe(
         map((users: Array<User>) => {
@@ -50,7 +50,7 @@ export class UserService extends BaseApiService {
           this.users = users;
           return users;
         }),
-        // catchError(this.handleError)
+        catchError(this.handleError)
       );
   }
 
