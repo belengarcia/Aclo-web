@@ -24,11 +24,11 @@ export class UserCardComponent {
   ) { }
 
   onClickShitButton(): void {
+    this.success = true;
     this.fuckOffsService.fuckYou(this.user.id)
       .subscribe(
         (fuckOff: FuckOff) => {
           this.clicked = true;
-          this.success = true;
           setTimeout(() => {
             this.router.navigate([`/destinies/${fuckOff.id}`]);
           }, 2000)

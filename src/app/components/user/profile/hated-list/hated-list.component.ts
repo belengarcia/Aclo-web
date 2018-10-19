@@ -21,7 +21,6 @@ export class HatedListComponent implements OnInit {
     this.userService.hatedList()
       .subscribe(
         (users: User[]) => {
-          console.log(users)
           this.users = users;
         }
       )
