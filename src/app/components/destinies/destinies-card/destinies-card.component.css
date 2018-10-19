@@ -5,8 +5,8 @@
     padding: 0px;
 }
 
-.mat-card-header-text {
-  width: 30%;
+::ng-deep .mat-card-header-text {
+  width: 90%;
 }
   
 .mat-card-avatar-fuckoff {
