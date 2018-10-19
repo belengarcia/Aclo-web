@@ -1,0 +1,21 @@
+.example-card {
+    max-width: 400px;
+    border-top: 4px solid black;
+    margin: 16px;
+    padding: 16px;
+  }
+  
+  .example-header-image {
+    /* background-image: url("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAHWIwNX9pdfZJL7vsd7MJyAI6mthG7WXPcaZVbbQfR6Dx2jUvt4u6-AbPwhEvYkvhdrXRvKHlUslpNN5VHznK9cJdySQZCMdO63ycvEXfRhVmrzZdpdOulnn40mJS45Q1EhB0jHvp3FTSgk1TpQ-8AgPCGhQwQtbLhX5SmlEprOZCEPlK8H3mDw&key=AIzaSyBaWJRBFCUYVRpyLEpJBrl8eB08XFGf7pY"); */
+    background-size: cover;
+  }
+
+  .mat-card-subtitle a {
+    color: red;
+  }
+
+
+.mat-card-avatar {
+  object-fit: cover;
+}
+
