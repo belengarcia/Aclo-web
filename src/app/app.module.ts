@@ -37,13 +37,14 @@ import { MatInputModule } from '@angular/material/input'
 import { MatDividerModule } from '@angular/material/divider'
 import { MatListModule } from '@angular/material/list'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 
 
 
 import { FavsFilterPipe } from './shared/pipes/favs-filter.pipe';
 import { FindDestinyPipe } from './shared/pipes/find-destiny.pipe';
 import { FindUserPipe } from './shared/pipes/find-user.pipe';
-import { PipesPipe } from './shared/pipes/hated-filter.pipe';
 import { FooterComponent } from './components/misc/footer/footer.component';
 
 
@@ -72,7 +73,6 @@ import { FooterComponent } from './components/misc/footer/footer.component';
     HatedListComponent,
     HatedCardComponent,
     FindDestinyPipe,
-    PipesPipe,
     FooterComponent
 
   ],
@@ -91,6 +91,7 @@ import { FooterComponent } from './components/misc/footer/footer.component';
     MatDividerModule,
     MatListModule,
     MatProgressSpinnerModule,
+    MatProgressBarModule,
     CommonModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBaWJRBFCUYVRpyLEpJBrl8eB08XFGf7pY'

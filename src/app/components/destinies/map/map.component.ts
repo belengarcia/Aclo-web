@@ -37,9 +37,10 @@ export class MapComponent implements OnInit {
       this.fuckOffsService.fuckYouDetails(id, this.user.id)
         .subscribe(
           (fuckOff: FuckOff) => {
+            let n = 1;
             this.fuckOff = fuckOff
             this.lat = fuckOff.destiny.coordinates[0];
-            this.lng = fuckOff.destiny.coordinates[1];
+            this.lng = fuckOff.destiny.coordinates[n];
           }
         );
     });

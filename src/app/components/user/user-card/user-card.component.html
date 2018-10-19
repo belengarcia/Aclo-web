@@ -8,9 +8,17 @@
 </mat-card>
 
 <div class="notification" [class.success]="clicked === true" >
-  <h3>Sucessfully sent someone to fuck off!</h3>
+  <p>Awesome! You sent {{ user.name }} to... </p>
 </div>
 
+
+<mat-progress-bar class='progress'    
+  *ngIf='clicked === true'
+  mode="indeterminate" 
+></mat-progress-bar>
+<!-- 
 <div class="preloader">
   <img src="" />
-</div>
+   *ngIf='clicked === true'
+   mode="indeterminate"
+</div> -->
