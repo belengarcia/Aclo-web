@@ -15,6 +15,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   apiError: ApiError;
   user: User; 
+  clicked: boolean = false;
 
   constructor(
     private sessionsService: SessionsService,
@@ -27,6 +28,7 @@ export class HomeComponent implements OnInit {
   }
 
   onClickShitButton(): void {
+      this.clicked = true;
       this.fuckOffsService.fuckYou(this.user.id)
         .subscribe(
           (fuckOff: FuckOff) => {
