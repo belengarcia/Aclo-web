@@ -37,7 +37,7 @@ export class FuckOffsService extends BaseApiService{
         map((fuckOffs: FuckOff[]) => {
           fuckOffs = fuckOffs.map(fuckOff => Object.assign(new FuckOff(), fuckOff))
           this.fuckOffs = fuckOffs
-          this.notifyFuckOffChanges();
+          //this.notifyFuckOffChanges();
           return fuckOffs;
         }),
         catchError(this.handleError)
