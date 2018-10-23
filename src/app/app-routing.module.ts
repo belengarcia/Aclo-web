@@ -3,7 +3,6 @@ import { UpsComponent } from './components/misc/ups/ups.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { UserListComponent } from './components/user/user-list/user-list.component';
 import { DestinyDetailsComponent } from './components/destinies/destiny-details/destiny-details.component';
-import { MyStatsComponent } from './components/gamification/my-stats/my-stats.component';
 import { UserProfileComponent } from './components/user/user-profile/user-profile.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/misc/login/login.component';
@@ -17,7 +16,7 @@ import { NotFoundComponent } from './components/misc/not-found/not-found.compone
 
 const routes: Routes = [
 
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent},
   { path: 'users', canActivate: [AuthGuard], component: UserListComponent},
