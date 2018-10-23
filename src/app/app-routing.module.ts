@@ -29,8 +29,8 @@ const routes: Routes = [
 
   { path: 'destinies/:id', canActivate: [AuthGuard], component: DestinyDetailsComponent},
   
-  { path: '404', component: NotFoundComponent},
-  { path: 'ups', component: UpsComponent},
+  // { path: '404', component: NotFoundComponent},
+  // { path: 'ups', component: UpsComponent},
 
   { path: '**', redirectTo: '/login' }
   

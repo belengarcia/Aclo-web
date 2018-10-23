@@ -1,5 +1,5 @@
 export const environment = {
   production: true, 
-  baseApi: 'https://aclo-app.herokuapp.com/'
+  baseApi: 'https://aclo-app.herokuapp.com'
 
 };
