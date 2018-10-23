@@ -16,7 +16,7 @@ import { NotFoundComponent } from './components/misc/not-found/not-found.compone
 
 const routes: Routes = [
 
-  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent},
   { path: 'users', canActivate: [AuthGuard], component: UserListComponent},
@@ -32,6 +32,7 @@ const routes: Routes = [
   { path: '404', component: NotFoundComponent},
   { path: 'ups', component: UpsComponent},
 
+  { path: '**', redirectTo: '/login' }
   
 ];
 
