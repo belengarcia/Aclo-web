@@ -52,46 +52,5 @@
 </div>
 
 <div class='image'>
-    <img src='../../../../../img/girl.png' />
+    <img src='../../../../assets/girl.png' />
 </div>
-
-
-<!-- <div class="login-container">
-        <input type="text" [ngClass]="{ 'is-invalid': apiError || name.errors && name.touched }"
-          placeholder="Enter your Name" 
-          name="name" [(ngModel)]="user.name" 
-          #name="ngModel" required>
-        
-        <div class="invalid-feedback" *ngIf="name.errors && name.touched && name.errors.required">
-          <small>Please say your name.</small>
-        </div>
-
-        <input type="text" [ngClass]="{ 'is-invalid': apiError || mail.errors && mail.touched }"
-          placeholder="Enter Email" 
-          name="mail" 
-          [(ngModel)]="user.mail" 
-          #mail="ngModel" required>
-
-        <div class="invalid-feedback" *ngIf="mail.errors && mail.touched && mail.errors.required">
-          <small>Please chose an email.</small>
-        </div>
-
-        <input type="password" [ngClass]="{ 'is-invalid': apiError || password.errors && password.touched }"
-          placeholder="Enter Password" 
-          name="password" 
-          [(ngModel)]="user.password" 
-          #password="ngModel" required>
-
-        <div class="invalid-feedback" *ngIf="password.errors && password.touched && mail.errors.required">
-          <small>Password is mandatory!</small>
-        </div>
-        <div class="invalid-feedback" *ngIf="mail.errors && mail.touched && mail.errors.minlength" minlength="8">
-          <small>easy password dude, try again!</small>
-        </div>
-
-        <div class="invalid-feedback" *ngIf="apiError">
-          {{ apiError.message }}
-        </div>
-
-        <button type="submit" [disabled]="!form.valid">Register</button>
-      </div> -->
