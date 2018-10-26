@@ -1,10 +1,10 @@
 {
-  "name": "acloWeb",
+  "name": "aclo-web",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --aot",
-    "build": "ng build --output-path docs --prod --aot --optimization --base-href 'https://belengarcia.github.io/acloWeb/'",
+    "build": "ng build --output-path docs --prod --aot --optimization --base-href 'https://belengarcia.github.io/aclo-web/'",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
