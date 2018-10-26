@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "aclo-web": {
+    "acloWeb": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/aclo-web",
+            "outputPath": "dist/acloWeb",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "aclo-web:build"
+            "browserTarget": "acloWeb:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "aclo-web:build:production"
+              "browserTarget": "acloWeb:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "aclo-web:build"
+            "browserTarget": "acloWeb:build"
           }
         },
         "test": {
@@ -95,7 +95,7 @@
         }
       }
     },
-    "aclo-web-e2e": {
+    "acloWeb-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,11 +103,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "aclo-web:serve"
+            "devServerTarget": "acloWeb:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "aclo-web:serve:production"
+              "devServerTarget": "acloWeb:serve:production"
             }
           }
         },
@@ -123,5 +123,5 @@
       }
     }
   },
-  "defaultProject": "aclo-web"
+  "defaultProject": "acloWeb"
 }
