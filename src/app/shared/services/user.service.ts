@@ -54,10 +54,6 @@ export class UserService extends BaseApiService {
       );
   }
 
-// uniqueArray = a.filter(function(item, pos) {
-//     return a.indexOf(item) == pos;
-// })
-
   get(id: string): Observable<User | ApiError> {
     return this.http.get<User>(`${UserService.USER_API}/${id}`, BaseApiService.defaultOptions)
       .pipe(

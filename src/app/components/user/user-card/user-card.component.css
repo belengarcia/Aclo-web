@@ -6,7 +6,6 @@
   }
   
   .example-header-image {
-    /* background-image: url("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAHWIwNX9pdfZJL7vsd7MJyAI6mthG7WXPcaZVbbQfR6Dx2jUvt4u6-AbPwhEvYkvhdrXRvKHlUslpNN5VHznK9cJdySQZCMdO63ycvEXfRhVmrzZdpdOulnn40mJS45Q1EhB0jHvp3FTSgk1TpQ-8AgPCGhQwQtbLhX5SmlEprOZCEPlK8H3mDw&key=AIzaSyBaWJRBFCUYVRpyLEpJBrl8eB08XFGf7pY"); */
     background-size: cover;
   }
 

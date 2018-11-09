@@ -37,7 +37,6 @@ export class FuckOffsService extends BaseApiService{
         map((fuckOffs: FuckOff[]) => {
           fuckOffs = fuckOffs.map(fuckOff => Object.assign(new FuckOff(), fuckOff))
           this.fuckOffs = fuckOffs
-          //this.notifyFuckOffChanges();
           return fuckOffs;
         }),
         catchError(this.handleError)
@@ -57,7 +56,6 @@ export class FuckOffsService extends BaseApiService{
       .pipe(
         map((fuckOff: FuckOff) => {
           Object.assign(new FuckOff(), fuckOff);
-          // this.fuckOffs = this.fuckOffs.filter(f => f.fav === true);
           this.notifyFuckOffChanges();
           return fuckOff;
         }),

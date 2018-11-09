@@ -3,12 +3,6 @@ import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { environment } from './../../../environments/environment';
 
-//import { Injectable } from '@angular/core';
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-
 export class BaseApiService {
   protected static readonly BASE_API = environment.baseApi;
   
@@ -17,7 +11,6 @@ export class BaseApiService {
     withCredentials: true
   }
 
-  // //si, esta le he copiado tal cual
   
   protected handleError(error: HttpErrorResponse): Observable<ApiError> {
     console.error('An error occurred:', error);

@@ -1,16 +1,6 @@
 <p>
   My hated ones
 </p>
-<!-- <mat-card *ngIf=users.length = 0>
-  C'mon! We can't believe you don't have your own hated ones.
-</mat-card> -->
 <mat-card *ngIf='users'>
   <app-hated-card *ngFor='let user of users' [user]='user'></app-hated-card>
 </mat-card>
-
-
-
-<!-- *ngFor='let user of users' [user]='user'
-https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-https://alligator.io/angular/material-design-angular-reference/#buttons
--->

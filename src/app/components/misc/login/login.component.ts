@@ -29,7 +29,6 @@ export class LoginComponent {
             this.user = this.sessionsService.user;
             loginForm.reset();
             this.router.navigate([`/users/${this.user.id}`]);
-             //¡UNDEFINED!
           }, 
           (error: ApiError) => this.apiError = error
         );
