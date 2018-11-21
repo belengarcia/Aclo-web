@@ -4,7 +4,7 @@ This project was the result of hard work, a lot of enthusiasm and mainly a lot o
 
 ## Context
 
-When I started the IronHack part time bootcamp I knew (in theory) how frustrating coding could be, but to experience it in practice was another thing. One day I was struggling with some crazy javascript logic late at night after a fool day of work and clases when I thought "You know what? Fuck Off. I quit"
+When I started the IronHack part time bootcamp I knew (in theory) how frustrating coding could be, but to experience it in practice was another thing. One day I was struggling with some crazy javascript logic late at night after a full day of work and coding lessons when I thought "You know what? Fuck Off. I quit"
 
 Of course I didn't quit. Mi Stockholm syndrome with coding at that moment was too big. 
 
