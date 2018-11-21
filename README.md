@@ -32,3 +32,7 @@ When you send someone somewhere, that person receives a mail notification, so be
 - Login with social media and other security measurments related with login and register
 - Add custom messages to your hated ones
 - Improved stats (to show you your level of frustration in relation with how many times you use the platform)
+
+## ACLO API
+Aclo has a pretty simple API developed with Express. You can take a look at it here:
+https://github.com/belengarcia/aclo-api
