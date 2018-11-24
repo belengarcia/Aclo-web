@@ -7,4 +7,5 @@ export class FuckOff {
     message?: string;
     destiny: Destiny = new Destiny();
     fav: boolean;
+    outsider: string;
 }

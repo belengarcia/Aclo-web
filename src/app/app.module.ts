@@ -47,6 +47,7 @@ import { FavsFilterPipe } from './shared/pipes/favs-filter.pipe';
 import { FindDestinyPipe } from './shared/pipes/find-destiny.pipe';
 import { FindUserPipe } from './shared/pipes/find-user.pipe';
 import { FooterComponent } from './components/misc/footer/footer.component';
+import { UserOutsiderComponent } from './components/user/user-outsider/user-outsider.component';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import { FooterComponent } from './components/misc/footer/footer.component';
     HatedListComponent,
     HatedCardComponent,
     FindDestinyPipe,
-    FooterComponent
+    FooterComponent,
+    UserOutsiderComponent
 
   ],
   imports: [
