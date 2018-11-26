@@ -6,14 +6,12 @@ Not on the list? No problem!
       <mat-form-field class="example-full-width">
         <input matInput 
         placeholder="Give us an email" 
-        [(ngModel)]='fuckOff.outsider' 
-        name='outsider' 
-        #outsider='ngModel'
+        name="outsider"
+        [(ngModel)]="fuckOff.outsider"
+        #outsider="ngModel"
         required>
       </mat-form-field>
 
-      <div >
-        <button type="submit">Send Fuck off</button>
-      </div>
+      <button type="submit">Send Fuck off</button>
   </form>
 </div>

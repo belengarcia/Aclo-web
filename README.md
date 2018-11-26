@@ -1,27 +1,38 @@
 # aclo-web
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
+This project was the result of hard work, a lot of enthusiasm and mainly a lot of frustration
 
-## Development server
+## Context
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+When I started the IronHack part time bootcamp I knew (in theory) how frustrating coding could be, but to experience it in practice was another thing. One day I was struggling with some crazy javascript logic late at night after a full day of work and coding lessons when I thought "You know what? Fuck Off. I quit"
 
-## Code scaffolding
+Of course I didn't quit. Mi Stockholm syndrome with coding at that moment was too big. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+I decided to develop an app to help other people to send everything to fuck off. And I did it. 
 
-## Build
+## Aclo meaning
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Aclo means "A tomar por culo" which could mean "I don't give a shit" or "Fuck off". As you prefer. 
 
-## Running unit tests
+## How to use it
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Aclo has two main functionalities:
+- You can find a place to disappear
+- You can find a place to send someone you are very upset with.
 
-## Running end-to-end tests
+IMPORTANT!! 
+When you send someone somewhere, that person receives a mail notification, so be careful and think first (at least a little)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Roadmap (sooner)
+- Send "fuckoffs" to people who is not registerd in the platform
+- Integration with flights APIs (so you can REALLY leave everything at the moment)
+- Web layout improvement (OK. I confess: right now is not "mobile first" is just "only mobile" you can try to see it in your desktop but is kind of a mess. Sorry)
 
-## Further help
+## Roadmap (later)
+- Login with social media and other security measurments related with login and register
+- Add custom messages to your hated ones
+- Improved stats (to show you your level of frustration in relation with how many times you use the platform)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## ACLO API
+Aclo has a pretty simple API developed with Express. You can take a look at it here:
+https://github.com/belengarcia/aclo-api
