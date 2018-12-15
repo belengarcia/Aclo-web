@@ -1,6 +1,6 @@
 
 <p>Find your hated ones</p>
 <app-user-finder (changePattern)="onPatternChange($event)"></app-user-finder>
-<app-user-outsider></app-user-outsider>
+<!-- <app-user-outsider></app-user-outsider> -->
 <app-user-card *ngFor='let user of users | findUser:finderPattern' [user]='user'></app-user-card>
 
