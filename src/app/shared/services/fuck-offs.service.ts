@@ -31,6 +31,18 @@ export class FuckOffsService extends BaseApiService{
       );
   }
 
+  fuckOutsider(userId:string, outsider:string): Observable<FuckOff | ApiError> {
+    return this.http.post<FuckOff>(`${FuckOffsService.FUCK_OFF_API}/${userId}/fuck-offs`, outsider, BaseApiService.defaultOptions)
+      .pipe(
+        map((fuckOff:FuckOff)=> {
+          Object.assign(new FuckOff(), fuckOff)
+          this.notifyFuckOffChanges();
+          return fuckOff;
+        }),
+        catchError(this.handleError)
+      )
+  } 
+
   list(userId: string): Observable<Array<FuckOff> | ApiError>{
     return this.http.get<Array<FuckOff>>(`${FuckOffsService.FUCK_OFF_API}/${userId}/fuck-offs`, BaseApiService.defaultOptions)
       .pipe(

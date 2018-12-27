@@ -18,13 +18,16 @@ export class UserOutsiderComponent {
   apiError: ApiError;
 
 
+
   constructor(
     private router: Router,
     private fuckOffsService: FuckOffsService
   ) { }
   
   onClickSendFuckOff(registerForm: FormGroup): void {
-    this.fuckOffsService.fuckYou(this.user.id)
+    console.log(this.user)
+    const outsider = this.fuckOff.outsider
+    this.fuckOffsService.fuckOutsider(this.user.id, outsider)
       .subscribe(
         (fuckOff: FuckOff) => {
           registerForm.reset();
