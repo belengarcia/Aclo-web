@@ -32,7 +32,7 @@ export class FuckOffsService extends BaseApiService{
   }
 
   fuckOutsider(userId:string, outsider:string): Observable<FuckOff | ApiError> {
-    return this.http.post<FuckOff>(`${FuckOffsService.FUCK_OFF_API}/${userId}/fuck-offs`, outsider, BaseApiService.defaultOptions)
+    return this.http.post<FuckOff>(`${FuckOffsService.FUCK_OFF_API}/${userId}/fuck-offs/outsider`, { outsider }, BaseApiService.defaultOptions)
       .pipe(
         map((fuckOff:FuckOff)=> {
           Object.assign(new FuckOff(), fuckOff)
